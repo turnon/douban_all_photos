@@ -4,10 +4,10 @@
 // ==UserScript==
 // @name         douban-all-photos
 // @namespace    https://github.com/turnon/douban_all_photos
-// @version      0.0.2
+// @version      0.0.3
 // @description  douban_all_photos
 // @author       block24block@gmail.com
-// @match       *://movie.douban.com/*/photos/
+// @match       *://movie.douban.com/*/photos*
 // @grant        none
 // ==/UserScript==
 (function MyPagesLoader($, config) {
