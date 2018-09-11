@@ -4,37 +4,14 @@
 // ==UserScript==
 // @name         douban-all-photos
 // @namespace    https://github.com/turnon/douban_all_photos
-// @version      0.0.3
+// @version      0.0.4
 // @description  douban_all_photos
 // @author       block24block@gmail.com
 // @match       *://movie.douban.com/*/photos*
 // @grant        none
+// @require https://greasyfork.org/scripts/372117-mypagesloader/code/MyPagesLoader.js?version=628190
 // ==/UserScript==
-(function MyPagesLoader($, config) {
-  function start() {
-    var page_count = config.page_count($)
-
-    var page_loaders = [];
-    for (var i = 2; i <= page_count; i++) {
-      var next_page = config.next_page(i)
-      page_loaders.push($.ajax({
-        url: next_page
-      }));
-    }
-
-    (async function () {
-      for (var loader of page_loaders) {
-        var data = await loader
-        config.append_page(data, $)
-      }
-    })()
-
-    $all.remove()
-  }
-
-  var $all = config.button($)
-  $all.click(start).css('cursor', 'pointer')
-})(jQuery, {
+MyPagesLoader(jQuery, {
   page_count: function ($) {
     return parseInt($('.paginator .next').prev().text())
   },
