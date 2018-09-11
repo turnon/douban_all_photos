@@ -4,12 +4,12 @@
 // ==UserScript==
 // @name         douban-all-photos
 // @namespace    https://github.com/turnon/douban_all_photos
-// @version      0.0.7
+// @version      0.0.8
 // @description  douban_all_photos
 // @author       block24block@gmail.com
 // @match       *://movie.douban.com/*/photos*
 // @grant        none
-// @require https://greasyfork.org/scripts/372117-mypagesloader/code/MyPagesLoader.js?version=628218
+// @require https://greasyfork.org/scripts/372117-mypagesloader/code/MyPagesLoader.js?version=628225
 // ==/UserScript==
 MyPagesLoader.config(jQuery, {
   page_count: function ($) {
